@@ -1,24 +1,26 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+## Heading 2 ## Executive summary :
 
-* Ruby version
 
-* System dependencies
+_Présentation :
+ Nous comptons mettre en place une plateforme d'échange de vidéos. Un utilisateur aura accès à du contenu gratuit, et pourra proposer son contenu pour le reste de la communauté. On verra par la suite ce qu'on rajoute.
 
-* Configuration
+_Business Model : 
+ Nous comptons éventuellement insérer un systeme de donations par Stripe.
 
-* Database creation
+_L'équipe en place : Nous sommes tous débutants à peu près à niveau égal.
+- Amal
+- Aurélien
+- Raghoul
+- Hugo
 
-* Database initialization
+_Nos clients :
+ On verra selon les fonctionnalités qu'on arrive à implémenter, pour l'instant on veut un produit qui marche.
 
-* How to run the test suite
+_Nos résultats à date :
+ Continuer à faire évoluer le site, avec une implémentation de systeme d'abonnement.
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+_Résultats escomptés dans trois ans :
+ Que le site soit autonome 
