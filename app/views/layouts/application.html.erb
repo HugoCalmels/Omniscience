@@ -16,7 +16,21 @@
   </head>
 
   <body>
-  <script src="https://vjs.zencdn.net/7.11.4/video.min.js"></script>
+  <p class="notice"><%= notice %></p>
+       <p class="alert"><%= alert %></p>
     <%= yield %>
-  </body>
+
+
+
+    <% if user_signed_in? %>
+    <li><%= link_to "Se deconnecter", destroy_user_session_path, method: :delete, class: 'text-black' %></li>
+    <li><%= link_to "Créer un contenu", new_video_path %></li>
+    <% else %>
+    <li><%= link_to "Se connecter", new_user_session_path, class: 'text-black' %></li>
+    <% end %>
+
+
+
+
+    </body>
 </html>
