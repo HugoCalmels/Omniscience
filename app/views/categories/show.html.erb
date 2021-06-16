@@ -1,0 +1,7 @@
+<h1>Categorys#show</h1>
+<p>Find me in app/views/categorys/show.html.erb</p>
+<h3><%= @category.title %></h3>
+
+<%= link_to "Editer", edit_category_path(@category.id) %>
+<%= link_to "Supprimer", category_path(@category.id), method: :delete %>
+<%= link_to "Revenir en arrière", categories_path %>

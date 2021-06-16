@@ -6,6 +6,8 @@
     <%= f.label :description %>
     <%= f.text_area :description %>
 
+    <%= f.select :category_id, Category.all.map {|c| [c.title, c.id]} %>
+
     <%= f.submit " Valider " %>
 
 <% end %>
