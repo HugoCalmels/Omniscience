@@ -1,0 +1,32 @@
+<%= form_for @video do |f| %>
+
+    <div class="field">
+        <%= f.label :title %>
+        <%= f.text_field :title %>
+    </div>
+
+    <div class="field">
+    <%= f.label :clip %>
+    <%= f.file_field :clip %>
+</div>
+
+<div class="field">
+<%= f.label :thumbnail %>
+<%= f.file_field :thumbnail %>
+</div>
+
+<div class="field">
+<%= f.select :category_id, Category.all.map {|c| [c.title, c.id]} %>
+</div>
+
+    <div class="field">
+        <%= f.label :description %>
+        <%= f.text_area :description %>
+    </div>
+
+
+    <div class="field">
+        <%= f.submit " Valider " %>
+    </div>
+
+<% end %>
