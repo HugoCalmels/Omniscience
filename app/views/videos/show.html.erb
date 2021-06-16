@@ -1,0 +1,9 @@
+<h1>Videos#show</h1>
+<p>Find me in app/views/videos/show.html.erb</p>
+<h3><%= @video.title %></h3>
+
+<p><%= @video.description %></p>
+
+<%= link_to "Editer", edit_video_path(@video.id) %>
+<%= link_to "Supprimer", video_path(@video.id), method: :delete %>
+<%= link_to "Revenir en arrière", videos_path %>
