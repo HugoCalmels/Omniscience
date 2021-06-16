@@ -4,4 +4,3 @@
 <% @videos.each do |video| %>
     <h3><%= link_to video.title, video_path(video.id) %></h3>
 <% end %>
-<%= link_to "Créer un contenu", new_video_path %>
