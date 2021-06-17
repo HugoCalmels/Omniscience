@@ -13,12 +13,18 @@
  *= require_tree .
  *= require_self
  */
+<<<<<<< HEAD
 
 
 
  @import "packs/bootstrap"
 
 /*!
+=======
+ @import "packs/bootstrap"
+
+ /*!
+>>>>>>> feature/amal_branch
  * Bootswatch v5.0.1
  * Homepage: https://bootswatch.com
  * Copyright 2012-2021 Thomas Park
@@ -31,7 +37,11 @@
  * Copyright 2011-2021 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
+<<<<<<< HEAD
  :root {
+=======
+:root {
+>>>>>>> feature/amal_branch
     --bs-blue: #007bff;
     --bs-indigo: #6610f2;
     --bs-purple: #6f42c1;
@@ -11318,4 +11328,8 @@
   
   .list-group-item-action:hover {
     background-color: #1c1e22;
+<<<<<<< HEAD
   }
+=======
+  }
+>>>>>>> feature/amal_branch
