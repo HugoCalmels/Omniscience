@@ -10,10 +10,6 @@
     <%= f.file_field :clip %>
 </div>
 
-<div class="field">
-<%= f.label :thumbnail %>
-<%= f.file_field :thumbnail %>
-</div>
 
 <div class="field">
 <%= f.select :category_id, Category.all.map {|c| [c.title, c.id]} %>
