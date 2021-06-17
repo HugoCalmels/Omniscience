@@ -10,14 +10,10 @@
 
 
 <h1>Videos#show</h1>
-<p>Find me in app/views/videos/show.html.erb</p>
-<h3><%= @video.title %></h3>
+<h3>Titre: <%= @video.title %></h3>
 
-<p><%= @video.description %></p>
+<p>Description: <%= @video.description %></p>
 
-<div style="width:400px; height:400px">
-<%= image_tag(@video.thumbnail, style:'width:100%;height:auto') %>
-</div>
 
 <div style="width:400px; height:400px">
 <%= video_tag(url_for(@video.clip), style:'width:100%;height:auto', controls:'') %>
@@ -28,22 +24,6 @@
 <%= link_to "Supprimer", video_path(@video.id), method: :delete %>
 <%= link_to "Revenir en arrière", videos_path %>
 </div>
-
-
-<video
-    id="my-video"
-    class="video-js"
-    controls
-    preload="auto"
-    width="640"
-    height="264"
-    poster="<%= url_for(@video.thumbnail)%>"
-    data-setup="{}"
-  >
-    <source src="<%= url_for(@video.clip)%>" type="video/mp4" />
-    
-    
-  </video>
 
 
 
