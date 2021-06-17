@@ -1,28 +1,52 @@
-<%= form_for @video do |f| %>
+<style>
+.my-container {
+border: 2px solid rgb(166, 155, 158);
+}
 
-    <div class="field">
-        <%= f.label :title %>
-        <%= f.text_field :title %>
+</style>
+
+ <div class="container my-container">
+    <div class="d-flex justify-content-center">
+        <div class="bs-component">
+
+        <br>
+
+        <%= form_for @video do |f| %>
+
+                <div class="field">
+                    <%= f.label :title %>
+                    <%= f.text_field :title %>
+                </div>
+
+                <div class="field">
+                <%= f.label :clip %>
+                <%= f.file_field :clip %>
+        </div>
+
+        <br>
+        
+        <div class="field">
+            <%= f.select :category_id, Category.all.map {|c| [c.title, c.id]} %>
+        </div>
+
+        <br>        
+
+        <div class="field">
+            <%= f.label :description %>
+            <%= f.text_area :description %>
+        </div>
+        
+        <br>
+
+        <div class="field">
+            <%= f.submit " Valider " %>
+        </div>
+
+        <br>
+
+        <% end %>
+
+        </div>
     </div>
-
-    <div class="field">
-    <%= f.label :clip %>
-    <%= f.file_field :clip %>
 </div>
-
-
-<div class="field">
-<%= f.select :category_id, Category.all.map {|c| [c.title, c.id]} %>
-</div>
-
-    <div class="field">
-        <%= f.label :description %>
-        <%= f.text_area :description %>
-    </div>
-
-
-    <div class="field">
-        <%= f.submit " Valider " %>
-    </div>
-
-<% end %>
+<br></br>

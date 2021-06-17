@@ -1,7 +1,37 @@
-<h1>Categorys#show</h1>
-<p>Find me in app/views/categorys/show.html.erb</p>
-<h3><%= @category.title %></h3>
+<h1>La Catégorie Créer</h1>
+<br>
 
-<%= link_to "Editer", edit_category_path(@category.id) %>
-<%= link_to "Supprimer", category_path(@category.id), method: :delete %>
-<%= link_to "Revenir en arrière", categories_path %>
+<style>
+.my-container {
+border: 2px solid rgb(166, 155, 158);
+}
+
+.but {
+    display:flex;
+    flex-direction: row
+}
+
+</style>
+
+<div class="container my-container">
+    <div class="d-flex justify-content-center">
+        <div class="bs-component">
+        <br>
+
+            <h3><%= @category.title %></h3>
+
+            <div class="container but"
+                <div class="row">
+                <%= link_to "Supprimer", category_path(@category.id), method: :delete %>
+                </div>
+                <div class="row">
+                <%= link_to "Revenir en arrière", categories_path %>
+                <br></br>
+                </div>
+            </div>
+
+        </div>    
+    </div>
+</div>    
+
+<br></br>

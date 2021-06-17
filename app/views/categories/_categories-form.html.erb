@@ -1,8 +1,28 @@
-<%= form_for @category do |f| %>
 
-  <%= f.label :title %>
-  <%= f.text_field :title %>
 
-  <%= f.submit " Valider " %>
+<style>
 
-<% end %>
+* {
+
+text-align: center;
+
+}
+
+</style>
+
+
+    <div class="bs-component">
+      <%= form_for @category do |f| %>
+
+        <%= f.label :title %>
+        <%= f.text_field :title %>
+
+        <%= f.submit " Valider " %>
+
+      <% end %>
+
+
+
+
+<br></br>
+<br></br>
