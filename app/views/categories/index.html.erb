@@ -1,7 +1,31 @@
-<h1>Categorys#index</h1>
-<p>Find me in app/views/categorys/index.html.erb</p>
 
-<% @categories.each do |category| %>
-  <h3><%= link_to category.title, category_path(category.id) %></h3>
-<% end %>
-<%= link_to "Créer un contenu", new_category_path %>
+
+
+<h1>Catégories</h1>
+<br>
+
+<style>
+.my-container {
+border: 2px solid rgb(166, 155, 158);
+}
+
+</style>
+
+<div class="container my-container">
+  <div class="d-flex justify-content-center">
+    <div class="bs-component">
+      
+    <br>
+      <% @categories.each do |category| %>
+        <h3><%= link_to category.title, category_path(category.id) %></h3>
+      <% end %>
+      <br>
+      <%= link_to "Créer une nouvelle Catégorie", new_category_path %>
+      <br></br>
+      
+    </div>
+  </div>
+</div>
+
+
+<br></br>
