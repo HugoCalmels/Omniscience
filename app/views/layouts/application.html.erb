@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>THPProjetdegroupe</title>
+    <title>Omniscience</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -18,47 +18,32 @@
   <body>
 
 
-
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
-    <a class="navbar-brand" href="/">Omniscience</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+    <a class="navbar-brand" href="#">Omniscience</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="navbarColor01">
+    <div class="collapse navbar-collapse" id="navbarColor03">
       <ul class="navbar-nav me-auto">
         <li class="nav-item">
-          <a class="nav-link active" href="/categories">Catégories
-            <span class="visually-hidden">(current)</span>
-          </a>
-        </li>
-        
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Profil</a>
-          <div class="dropdown-menu">
+          <div class="dropdown-menu text-center">
           <% if user_signed_in? %>
-            <a><%= link_to "page profil", new_video_path %></a>
+            <a><%= link_to "Page profil", new_video_path %></a>
             <br>
             <a><%= link_to "Créer une vidéo", new_video_path %></a>
-            <br>
-            <a><%= link_to "Créer une catégorie", new_category_path %></a>  
-            <br>
             <div class="dropdown-divider"></div>
-            
-            
-            
               <a><%= button_to "Se deconnecter", destroy_user_session_path, method: :delete, class: 'text-black' %></a>
-             
-            
               <% else %>
-
               <a><%= button_to "Se connecter", new_user_session_path, class: 'text-black' %></a>
-              
             <% end %>
           </div>
         </li>
       </ul>
+
       <form class="d-flex">
         <input class="form-control me-sm-2" type="text" placeholder="Search">
         <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
@@ -67,20 +52,9 @@
   </div>
 </nav>
 
-
-
-
-
-
   <p class="notice"><%= notice %></p>
        <p class="alert"><%= alert %></p>
     <%= yield %>
-
-
-
-   
-
-
     <body class="d-flex flex-column">
   
 
@@ -115,7 +89,6 @@
             
             <% if user_signed_in? %>
               <li class="mb-2"><a href="/videos/new" class="text-muted">Créer Une Vidéo</a></li>
-              <li class="mb-2"><a href="/categories/new" class="text-muted">Créer Une Catégorie</a></li>
               <li class="mb-2"><a href="#" class="text-muted">Profil</a></li>           
             <% else %>
               <li class="mb-2"><a href="/users/sign_in" class="text-muted">Se Connecter</a></li>
@@ -155,6 +128,11 @@
 
 
 <STYLE>
+.dropdown-menu {
+  text-decoration: none
+}
+a {
+  text-decoration: none
+}
 
-background-color:black;
 </STYLE>

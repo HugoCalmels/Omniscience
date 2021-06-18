@@ -1,45 +1,51 @@
+<body>
+<h1>APPRENEZ EN STREAMING !</h1>
 
-<h1>APPRENEZ EN <div class="rouge">STREAMING !</div></h1>
-
-<div id="carouselExample" class="carousel slide carousel-fade" data-bs-ride="carousel">
+<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=827&q=80" class="d-block w-100" alt="...">
+      <img src="https://images.unsplash.com/photo-1501504905252-473c47e087f8?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8c3R1ZHl8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" class="d-block w-100" alt="...">
     </div>
     <div class="carousel-item">
-      <img src="https://images.unsplash.com/photo-1593672715438-d88a70629abe?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8bW9uZXl8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" class="d-block w-100" alt="...">
+      <img src="https://images.unsplash.com/photo-1504607798333-52a30db54a5d?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fGVjb25vbXl8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" class="d-block w-100" alt="...">
     </div>
     <div class="carousel-item">
-      <img src="https://images.unsplash.com/photo-1518842013791-b874be246c34?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTl8fHNjaWVuY2V8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" class="d-block w-100" alt="...">
+      <img src="https://img.over-blog-kiwi.com/1/22/98/79/20181020/ob_e0902e_12657946083-fb10cdfe7c-b.jpg" class="d-block w-100" alt="...">
     </div>
   </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Previous</span>
   </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Next</span>
   </button>
-</div>
 
-
+<br></br>
+<h1>Vos vidées ajoutées</h1>
+<br></br>  
+<% @videos.each do |video| %>
+    <h3><%= link_to video.title, video_path(video.id) %></h3>
+    <% end %>
+    <br></br>  
 
 <STYLE>
 body {
     background-color: #000000; 
 }
+
 h1 {
-    color: white;
-    margin-top: 150px;
-    margin-left: 100px;
+  text-align: center;
+  color: white
 }
-.rouge
-{
-color : #C0392B;
-}
-.carouselExample {
-    width: 30px
-	height: 30px
+.embed-responsive{
+  text-center
 }
 </STYLE>
+
