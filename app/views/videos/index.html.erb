@@ -28,13 +28,76 @@
   </button>
 
 <br></br>
-<h1>Nouvelles vidéos</h1>
+<h1>NOUVELLES VIDÉOS</h1>
 <br></br>  
 
-<% @videos.each do |video| %>
-    <h3><%= link_to video.title, video_path(video.id) %></h3>
-    <% end %>
-    <br></br>  
+<br></br>
+<br></br>
+
+
+
+
+
+
+    <div class="container">
+
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+
+    <% @videos.each do |video| %>
+
+
+
+
+
+
+
+
+
+
+      <div class="col">
+      <div class="card border-warning mb-3 cards" style="max-width: 20rem;">
+
+        <div class="card-header">
+          <center><h4><%= link_to video.title, video_path(video.id) %></h4></center>
+        </div>
+
+        <div class="card-body">
+
+
+        <div class="flex-container text">
+        <center><img src="" width="250" height="200"> </center>
+          <center><h4 class="card-title"><%= video.category %></h4></center>
+          <h6><strong><%= video.description %></strong></h6>
+          <%= link_to "Visioner", video_path(video.id), class: 'btn btn-sm btn-outline-secondary'%>
+
+
+</div>
+          </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <% end %>
+
+    </div>
+  </div>
+
+
+
+
+  <br></br><br></br>
 
 <STYLE>
 body {

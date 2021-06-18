@@ -14,6 +14,7 @@
  *= require_self
  */
 
+<<<<<<< HEAD
 
 
  @import "packs/bootstrap"
@@ -11323,3 +11324,6 @@
   body {
     background-color: #000000; 
 }
+=======
+ @import "packs/bootstrap"
+>>>>>>> c290f48d47609f5157628f4eb16969280849aa09
