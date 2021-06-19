@@ -57,6 +57,7 @@
   </div>
 </nav>
 
+<%= button_to "Inscription", new_user_registration_path, :method => "get", class: "navbar_buttons" %>
 <a><%= button_to "Se connecter", new_user_session_path, class: 'text-black' %></a>
 <% if user_signed_in? %>
 <a><%= button_to "Se deconnecter", destroy_user_session_path, method: :delete, class: 'text-black' %></a>
