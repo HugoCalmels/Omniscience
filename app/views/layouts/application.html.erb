@@ -20,7 +20,7 @@
 
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
-    <a class="navbar-brand" href="/videos">Omniscience</a>
+    <a class="navbar-brand"><%= link_to "Omniscience", root_path %></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -42,6 +42,8 @@
           </div>
         </li>
       </ul>
+
+      <a> <%= link_to "Catégories", categories_path %></a>
 
       <form class="d-flex">
         <input class="form-control me-sm-2" type="text" placeholder="Recherche">
