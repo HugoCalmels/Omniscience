@@ -5,7 +5,7 @@ border: 2px solid rgb(166, 155, 158);
 
 </style>
 
- <div class="container my-container">
+<div class="container my-container">
     <div class="d-flex justify-content-center">
         <div class="bs-component">
 
@@ -13,40 +13,42 @@ border: 2px solid rgb(166, 155, 158);
 
         <%= form_for @video do |f| %>
 
-                <div class="field">
-                    <%= f.label :title %>
-                    <%= f.text_field :title %>
-                </div>
+            <div class="field">
+                <%= f.label :Titre %>
+                <%= f.text_field :title %>
+            </div>
 
-                <div class="field">
-                <%= f.label :clip %>
+            <br>
+
+            <div class="field">
+                <%= f.label :Fichier_Mp4 %>
                 <%= f.file_field :clip %>
-        </div>
+            </div>
 
-        <br>
+            <br>
         
-        <div class="field">
-            <%= f.select :category_id, Category.all.map {|c| [c.title, c.id]} %>
-        </div>
+            <div class="field">
+                <p>Sélectionner sa catégorie <%= f.select :category_id, Category.all.map {|c| [c.title, c.id]} %></p>
+            </div>
 
-        <br>        
+            <br>        
 
-        <div class="field">
-            <%= f.label :description %>
-            <%= f.text_area :description %>
-        </div>
+            <div class="field">
+                <%= f.label :description %>
+                <%= f.text_area :description %>
+            </div>
         
-        <br>
+            <br>
 
-        <div class="field">
-            <%= f.submit " Valider " %>
-        </div>
+            <div class="field">
+                <%= f.submit " Valider " %>
+            </div>
 
-        <br>
+            <br>
 
-        <% end %>
+            <% end %>
 
         </div>
     </div>
 </div>
-<br></br>
+
