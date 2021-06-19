@@ -1,6 +1,6 @@
-<h1>Bienvenue sur votre page de profil, <%= @user.email%></h1>
+<h1>Bienvenue sur votre page de profil, <%= @user.name%></h1>
 
-
+<%= link_to 'Editer son Profil', edit_user_registration_path %>
 <h3> La liste du contenu que tu nous as proposé </h3>
 <% @user_videos.each do |video| %>
   <li>

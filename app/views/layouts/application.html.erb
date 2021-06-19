@@ -38,6 +38,7 @@
               <a><%= button_to "Se deconnecter", destroy_user_session_path, method: :delete, class: 'text-black' %></a>
               <% else %>
               <a><%= button_to "Se connecter", new_user_session_path, class: 'text-black' %></a>
+            
             <% end %>
           </div>
         </li>
