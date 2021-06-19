@@ -58,9 +58,11 @@
 </nav>
 
 <a><%= button_to "Se connecter", new_user_session_path, class: 'text-black' %></a>
+<% if user_signed_in? %>
 <a><%= button_to "Se deconnecter", destroy_user_session_path, method: :delete, class: 'text-black' %></a>
 <a><%= link_to "Créer un contenu", new_video_path %></a>
 <a> <%= link_to "Mon profil", user_path(current_user) %></a>
+<% end %>
 
   <p class="notice"><%= notice %></p>
        <p class="alert"><%= alert %></p>
