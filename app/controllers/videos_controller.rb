@@ -39,7 +39,7 @@ class VideosController < ApplicationController
     @video = Video.find(params[:id])
 
     @video.destroy
-    redirect_to :action => index
+    redirect_to videos_path
   end
 
   private
