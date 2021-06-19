@@ -38,8 +38,9 @@
 
 <br><br><br>
 
-<div class="container sciences-container">
-<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 ">
+<center><h2> List of videos from all of the categories for now </h2></center>
+<div class="container categories-container">
+<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 ", style="padding-top: 10px;">
     <% @videos.each do |video| %>
         <div class="col">
             <div class="card border-warning mb-3 cards" style="max-width: 20rem;">
@@ -94,7 +95,10 @@ h1 {
   color: white
 }
 
-
+.categories-container {
+  border: 2px solid black;
+  border-radius: 12px;
+}
 
 </STYLE>
 
