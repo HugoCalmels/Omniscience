@@ -2,7 +2,8 @@ Rails.application.routes.draw do
   root to: "videos#index"
   
   devise_for :users
-  
+
+  resources :users, only: [:index, :show]
   resources :videos
   resources :categories
   resources :landing, only: [:index, :show]

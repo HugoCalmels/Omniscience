@@ -8,11 +8,11 @@ class VideosController < ApplicationController
   end
 
   def new
-    @video = Video.new
+    @video = current_user.videos.build
   end
 
   def create
-    @video = Video.create(video_params)
+    @video = current_user.videos.build(video_params)
 
     if @video.save
       redirect_to @video
