@@ -1,4 +1,6 @@
 class VideosController < ApplicationController
+  before_action :authenticate_user!, except: [:show, :index]
+
   def index
     @videos = Video.all
   end
@@ -6,7 +8,10 @@ class VideosController < ApplicationController
   def show
     @video = Video.find(params[:id])
     @comments = Comment.where(video_id: @video).order("created_at DESC")
+    
   end
+
+
 
   def new
     @video = current_user.videos.build
@@ -14,6 +19,7 @@ class VideosController < ApplicationController
 
   def create
     @video = current_user.videos.build(video_params)
+
 
     if @video.save
       redirect_to @video
@@ -46,6 +52,8 @@ class VideosController < ApplicationController
   private
 
   def video_params
-    params.require(:video).permit(:title, :description, :category_id, :clip, :thumbnail)
+    params.require(:video).permit(:title, :description, :category_id, :clip, :thumbnail, :user_id)
   end
+
+  
 end

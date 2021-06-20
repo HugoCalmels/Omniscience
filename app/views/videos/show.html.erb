@@ -15,6 +15,7 @@
   <h3>Titre : "<%=@video.title %>"</h3>
   <p><strong> Catégorie</strong> : <%= @video.category.title %></p>
   <br>
+  <p><strong> User</strong> : <%= @video.user.name %></p>
 
   <div style="width:400px; height:400px">
   <%= video_tag(url_for(@video.clip), style:'width:100%;height:auto', controls:'') %>
@@ -22,10 +23,14 @@
 
   <br></br>
 
-  <div>
+  <% if (current_user && current_user.id == @video.user_id) || current_user.admin %>
   <%= link_to "Editer", edit_video_path(@video.id) %>
   <%= link_to "Supprimer", video_path(@video.id), method: :delete %>
-  <%= link_to "Revenir en arrière", videos_path %>
+  </div>
+  <% end %>
+
+  <div>
+  <%= link_to "Revenir à l'accueil", videos_path %>
   </div>
 
   <br></br>

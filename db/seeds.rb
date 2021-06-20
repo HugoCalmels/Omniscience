@@ -7,10 +7,20 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Category.destroy_all
+User.destroy_all
+Comment.destroy_all
+Video.destroy_all
 
 Category.create(title: "Sciences")
 Category.create(title: "Astronomie")
 Category.create(title: "Economie")
+
+user = User.new 
+user.admin = true
+user.email = 'admin@omniscience.com'
+user.password = '123123'
+user.password_confirmation = '123123'
+user.save!
 
 puts "%" * 50
 puts "       Base de données Catgory remplie !"
