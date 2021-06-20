@@ -3,8 +3,10 @@ Rails.application.routes.draw do
   
   devise_for :users
 
+  resources :videos do 
+    resources :comments 
+  end
   resources :users, only: [:index, :show]
-  resources :videos
   resources :categories
   resources :landing, only: [:index, :show]
 

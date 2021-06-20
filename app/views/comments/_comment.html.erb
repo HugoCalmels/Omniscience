@@ -1,0 +1,15 @@
+<h5><%= pluralize(@comments.count, "Commentaires") %></h5>
+
+<% @comments.each do |comment| %>
+
+
+  <p><b><%= comment.user.name %></b></p>
+  <p><%= comment.content %></p>
+
+  <% if current_user == comment.user %>
+  <%= link_to "Supprimer le commentaire", [comment.video, comment], method: :delete %>
+  <%= link_to "Editer le commentaire", edit_video_comment_path(comment.video, comment) %>
+  <% end %> 
+  <% end %> 
+
+  <%= render 'comments/form' %>
