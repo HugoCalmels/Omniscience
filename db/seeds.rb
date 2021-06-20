@@ -16,6 +16,7 @@ Category.create(title: "Astronomie")
 Category.create(title: "Economie")
 
 user = User.new 
+user.name = 'admin'
 user.admin = true
 user.email = 'admin@omniscience.com'
 user.password = '123123'
