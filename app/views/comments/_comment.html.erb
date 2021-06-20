@@ -1,15 +1,20 @@
-<h5><%= pluralize(@comments.count, "Commentaires") %></h5>
+<h5><%= pluralize(@comments.count, " commentaire") %></h5>
+
+<br>
 
 <% @comments.each do |comment| %>
 
 
   <p><b><%= comment.user.name %></b></p>
-  <p><%= comment.content %></p>
-
+  <p><%= comment.content %>
   <% if current_user == comment.user %>
-  <%= link_to "Supprimer le commentaire", [comment.video, comment], method: :delete %>
-  <%= link_to "Editer le commentaire", edit_video_comment_path(comment.video, comment) %>
+  <%= link_to "Supprimer", [comment.video, comment], method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-outline-secondary'%>
+  <%= link_to "Modifier", edit_video_comment_path(comment.video, comment), class: 'btn btn-sm btn-outline-secondary'%>
   <% end %> 
+
+  </p>
+  
   <% end %> 
+
 
   <%= render 'comments/form' %>

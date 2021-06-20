@@ -10,38 +10,37 @@
 <body>
 <div class="container vid">
 
-  <h4>Voici le contenu que vous avez choisi</h4>
-  <br>
-  <h3>Titre : "<%=@video.title %>"</h3>
-  <p><strong> Catégorie</strong> : <%= @video.category.title %></p>
-  <br>
-  <p><strong> User</strong> : <%= @video.user.name %></p>
+    <div style="width:1280px; height:720px">
+        <%= video_tag(url_for(@video.clip), style:'width:100%;height:720px', controls:'') %>
+    </div>
 
-  <div style="width:400px; height:400px">
-  <%= video_tag(url_for(@video.clip), style:'width:100%;height:auto', controls:'') %>
-  </div>
+    <div>
+        <h3>Titre : "<%=@video.title %>"</h3>
+        <p><strong> Catégorie</strong> : <%= @video.category.title %></p>
+        <hr>
+    </div>
 
-  <br></br>
+    <div>
+        <p><strong> Auteur</strong> : <%= @video.user.name %></p> 
+        <% if (current_user && current_user.id == @video.user_id) || current_user.admin %>
+            <%= link_to "Modifier", edit_video_path(@video.id), class: 'btn btn-sm btn-outline-secondary'%>
+            <%= link_to "Supprimer", video_path(@video.id), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-outline-secondary'%>
+        <% end %>
+        <hr>
+    </div>
 
-  <% if (current_user && current_user.id == @video.user_id) || current_user.admin %>
-  <%= link_to "Editer", edit_video_path(@video.id) %>
-  <%= link_to "Supprimer", video_path(@video.id), method: :delete %>
-  </div>
-  <% end %>
+    <div>
+        <p><strong> Description</strong> : <%=@video.description %></p>
+        <hr>
+    </div>
 
-  <div>
-  <%= link_to "Revenir à l'accueil", videos_path %>
-  </div>
+    <div>
+        <%= render 'comments/comment' %>
+    </div>
+</div>
 
-  <br></br>
 
-  <div>
-  <p><strong> Description</strong> : <%=@video.description %></p>
-  </div>
 
-  <div>
-    <%= render 'comments/comment' %>
-  </div>
 
 
   <script src="https://vjs.zencdn.net/7.11.4/video.min.js"></script>
