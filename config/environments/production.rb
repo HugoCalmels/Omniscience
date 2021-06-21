@@ -1,5 +1,18 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
+  ActionMailer::Base.delivery_method = :smtp
+  ActionMailer::Base.perform_deliveries = true
+  ActionMailer::Base.smtp_settings = {
+      address: 'smtp.gmail.com',
+      port: 465,
+      domain: 'gmail.com',
+      user_name: Rails.application.credentials.gmail_user_key,
+      password: Rails.application.credentials.gmail_user_password,
+      authentication: 'plain',
+      :ssl => true,
+      :tsl => true,
+      enable_starttls_auto: true 
+    }
 
   # Code is not reloaded between requests.
   config.cache_classes = true
