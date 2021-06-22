@@ -1,14 +1,6 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = {
-    port: 587,
-    address: 'smtp.gmail.com',
-    user_name: ENV['SMTP_USER_NAME'],
-    password: ENV['SMTP_PASSWORD'],
-    authentication: :plain,
-    enable_starttls_auto: true
-  }
+  
   # api_host: 'api.eu.mailgun.net'  # Uncomment this line for EU region domains
   
 
