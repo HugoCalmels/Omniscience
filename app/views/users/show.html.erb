@@ -1,9 +1,22 @@
+<body>
 <h1>Bienvenue sur votre page de profil, <%= @user.name%></h1>
 
-<%= link_to 'Editer son Profil', edit_user_registration_path %>
-<h3> La liste du contenu que tu nous as proposé </h3>
+<center>
+<%= link_to 'Modifier mon profil', edit_user_registration_path , class: 'btn btn-sm btn-outline-secondary'%>
+</center>
+<br><br>
+<h3> Voici les contenus que tu as mis en ligne : </h3>
 <% @user_videos.each do |video| %>
   <li>
   <%= link_to video.title, video_path(video) %>
 </li>
   <% end %>
+</body>
+
+
+<STYLE>
+body{
+  text-align: center;
+}
+
+</STYLE>
