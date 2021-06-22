@@ -1,12 +1,15 @@
 # Load the Rails application.
 require_relative 'application'
+require 'dotenv'
+
+Dotenv.load
 
 # Initialize the Rails application.
 Rails.application.initialize!
 
 ActionMailer::Base.smtp_settings = {
   user_name: 'apikey', 
-  password: Rails.credientals.dig(:sendgrid, :api_key), 
+  password: ENV['SENDGRID_API_KEY'], 
   domain: 'omniscience-thp.herokuapp.com',
   address: 'smtp.sendgrid.net',
   port: 587,
