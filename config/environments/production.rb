@@ -8,8 +8,8 @@ Rails.application.configure do
     :address => 'smtp.sendgrid.net',
     :port => '587',
     :authentication => :plain,
-    :user_name => Rails.application.credentials.sendgrid.user_name,
-    :password => Rails.application.credentials.sendgrid.password,
+    :user_name => Rails.application.credentials.sendgrid[:username],
+    :password => Rails.application.credentials.sendgrid[:password],
     :domain => 'omniscience-thp.herokuapp.com',
     :enable_starttls_auto => true
   }
