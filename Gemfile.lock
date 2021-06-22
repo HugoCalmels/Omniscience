@@ -309,7 +309,7 @@ DEPENDENCIES
   jquery-rails
   letter_opener
   listen (>= 3.0.5, < 3.2)
-  mailgun-ruby
+  mailgun-ruby (~> 1.2, >= 1.2.5)
   mini_magick (~> 4.8)
   mini_racer
   pg (>= 0.18)
