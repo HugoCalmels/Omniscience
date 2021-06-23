@@ -5,17 +5,97 @@
 </center>
 <br><br>
 <h3> Voici les contenus que tu as mis en ligne : </h3>
-<% @user_videos.each do |video| %>
-  <li>
-  <%= link_to video.title, video_path(video) %>
-</li>
-  <% end %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container categories-container">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 ", style="padding-top: 10px;">
+        <% @user_videos.each do |video| %>
+            <div class="col">
+                <div class="card border-secondary mb-3 cards" style="max-width: 20rem;">
+
+            <div class="card-header">
+                <center><h4>Titre : <%= video.title %></h4></center>
+            </div>
+
+            <div class="card-body">
+                <div class="flex-container text">
+                        <br>
+                        <div style="width:275px; height:200px">
+                            <%= video_tag(url_for(video.clip), style:'width:100%') %>
+                        </div>
+                        
+
+                          <h6><strong>Catégorie : </strong><%= video.category.title %></h6>
+
+                          <h6><strong>Description : </strong><%= video.description %></h6>
+
+                          <h6><strong>Auteur : </strong><%= video.user.name %></h6>
+                          
+                          
+                          <center>
+                          <%= link_to "Regarder !", video_path(video.id), class: 'btn btn-sm btn-outline-secondary'%>
+                          <%= link_to "Modifier", edit_video_path(video.id), class: 'btn btn-sm btn-outline-secondary'%>
+                          </center>
+                          
+                   
+                        </div>
+                    </div>
+                </div>
+            </div> 
+            <% end %>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
 </body>
 
 
 <STYLE>
+
+h1 {
+  text-align: center;
+  color: black
+}
+
+.carousel-inner {
+    height: 500px;
+}
+
+
+
 body{
   text-align: center;
 }
 
+
+ .card {
+  
+  
+	 background-image: linear-gradient(180deg, white 3rem, #f0a4a4 calc(3rem), #f0a4a4 calc(3rem + 2px), transparent 1px), repeating-linear-gradient(0deg, transparent, transparent 1.5rem, #ddd 1px, #ddd calc(1.5rem + 1px));
+	 
+}
+ 
 </STYLE>
