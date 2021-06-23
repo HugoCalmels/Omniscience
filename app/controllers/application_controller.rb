@@ -3,6 +3,19 @@ class ApplicationController < ActionController::Base
 
      before_action :configure_permitted_parameters, if: :devise_controller?
 
+     helper_method  :signed_in?, :is_admin?
+
+     
+
+     def signed_in?
+          !!current_user
+     end
+
+     def is_admin?
+          signed_in? ? current_user.admin : false
+     end
+
+
      protected
 
           def configure_permitted_parameters
