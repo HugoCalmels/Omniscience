@@ -23,7 +23,7 @@
 
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
-    <a class="navbar-brand"><%= link_to "Omniscience    ", root_path %></a>
+    <a class="navbar-brand"><%= link_to "Omniscience", root_path %></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -46,18 +46,7 @@
             </li>
           <% end %>
         </div>
-
-        
-      
-
-        
       </ul>
-
-        
-
-
-
-
       <form class="d-flex">
         <input class="form-control me-sm-2" type="text" placeholder="Recherche">
         <button class="btn btn-secondary my-2 my-sm-0" type="submit">Recherche</button>
@@ -108,8 +97,6 @@
         <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
           <h6 class="text-uppercase font-weight-bold mb-4">Compte</h6>
           <ul class="list-unstyled mb-0">
-            
-            
             <% if user_signed_in? %>
               <li class="mb-2"><a href="/videos/new" class="text-muted">Créer Une Vidéo</a></li>
               <li class="mb-2"><a href="#" class="text-muted">Profil</a></li>           
@@ -145,10 +132,6 @@
 
     </body>
 </html>
-
-
-
-
 
 <STYLE>
 .dropdown-menu {
