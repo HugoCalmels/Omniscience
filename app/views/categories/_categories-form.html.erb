@@ -16,9 +16,9 @@ text-align: center;
 
         <%= f.label :title %>
         <%= f.text_field :title %>
-
+        <% if is_admin? %>
         <%= f.submit " Valider " %>
-
+        <% end %>
       <% end %>
 
 
