@@ -21,7 +21,7 @@ user.admin = true
 user.email = 'admin@omniscience.com'
 user.password = '123123'
 user.password_confirmation = '123123'
-
+user.skip_confirmation!
 user.save!
 
 puts "%" * 50
