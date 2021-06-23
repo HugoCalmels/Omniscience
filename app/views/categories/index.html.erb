@@ -1,7 +1,12 @@
 
 
 
-<h1>Catégories</h1>
+<h1>Catégories</h1>  
+<div class="my-2 my-sm-0">
+  <% if is_admin? %>
+    <a class="navbar-brand"><%= link_to "Créer une nouvelle Catégorie", new_category_path %></a>
+  <% end %>
+</div>
 <br>
 
 <style>
@@ -20,8 +25,7 @@ border: 2px solid rgb(166, 155, 158);
         <h3><%= link_to category.title, category_path(category.id) %></h3>
       <% end %>
       <br>
-      <%= link_to "Créer une nouvelle Catégorie", new_category_path %>
-      <br></br>
+      
       
     </div>
   </div>

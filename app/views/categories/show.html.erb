@@ -22,11 +22,13 @@ border: 2px solid rgb(166, 155, 158);
 
             <div class="container but"
                 <div class="row">
-                <%= link_to "Supprimer", category_path(@category.id), method: :delete %>
+                    <% if is_admin? %>
+                        <%= link_to "Supprimer", category_path(@category.id), method: :delete %>
+                    <% end %>
                 </div>
                 <div class="row">
-                <%= link_to "Revenir en arrière", categories_path %>
-                <br></br>
+                    <%= link_to "Revenir en arrière", categories_path %>
+                    <br></br>
                 </div>
             </div>
 

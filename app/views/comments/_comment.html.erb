@@ -6,8 +6,8 @@
 
 
   <p><b><%= comment.user.name %></b></p>
-  <p><%= comment.content %>
-  <% if current_user == comment.user %>
+  <p><%= comment.content %></p>
+  <% if current_user == comment.user or is_admin? %>
   <%= link_to "Supprimer", [comment.video, comment], method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-outline-secondary'%>
   <%= link_to "Modifier", edit_video_comment_path(comment.video, comment), class: 'btn btn-sm btn-outline-secondary'%>
   <% end %> 
