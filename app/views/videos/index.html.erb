@@ -46,7 +46,7 @@
             <div class="card-body">
                 <div class="flex-container text">
                         <br>
-                        <div style="width:275px; height:275px">
+                        <div style="width:275px; height:200px">
                             <%= video_tag(url_for(video.clip), style:'width:100%') %>
                         </div>
                         
@@ -63,13 +63,13 @@
                     </center>
                     <% end %>
                    
+                        </div>
+                    </div>
                 </div>
-            </div>
+            </div> 
+            <% end %>
         </div>
-    </div> 
-    <% end %>
-  </div>
-</div>
+    </div>
 </div>
 
 
@@ -89,6 +89,12 @@ h1 {
     height: 500px;
 }
 
+.card {
+  
+  
+    background-image: linear-gradient(180deg, white 3rem, #f0a4a4 calc(3rem), #f0a4a4 calc(3rem + 2px), transparent 1px), repeating-linear-gradient(0deg, transparent, transparent 1.5rem, #ddd 1px, #ddd calc(1.5rem + 1px));
+    
+}
 
 </STYLE>
 
