@@ -33,6 +33,10 @@
 
 
 <br></br>
+
+<h2>Des nouveaux cours chaque semaine !</h2>
+<br></br>
+
 <div class="container categories-container">
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 ", style="padding-top: 10px;">
         <% @videos.each do |video| %>
@@ -40,11 +44,11 @@
                 <div class="card border-secondary mb-3 cards" style="max-width: 20rem;">
 
             <div class="card-header">
-                <center><h4>Titre : <%= video.title %></h4></center>
+                <center><h4> <%= video.title %></h4></center>
             </div>
 
             <div class="card-body">
-                <div class="flex-container text">
+                <div class="flex-container text-center">
                         <br>
                         <div style="width:275px; height:200px">
                             <%= video_tag(url_for(video.clip), style:'width:100%') %>
@@ -77,6 +81,30 @@
     
 
 
+<br></br>
+<div class="card-group">
+  <div class="card">
+    <img class="card-img-top" src="https://images.unsplash.com/photo-1614899417406-e6f8485cd279?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjB8fGtub3dsZWRnZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title text-center">Connaissance</h5>
+      <p class="card-text text-center">Comprendre les enjeux économiques, scientifiques et ou astronomiques avec des vidéos clés en mains qui analyseront pour vous les élémentés clés.</p>
+    </div>
+  </div>
+  <div class="card">
+    <img class="card-img-top" src="https://images.unsplash.com/photo-1522071901873-411886a10004?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80k" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title text-center">Accessible à tous</h5>
+      <p class="card-text text-center">Les vidéos postées pourront être consultées par toute la communauté et cela gratuitement afin de rendre accessible la voie à la connaissance !</p>
+    </div>
+  </div>
+  <div class="card">
+    <img class="card-img-top" src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title text-center">Communauté</h5>
+      <p class="card-text text-center">Notre communauté est notre unique source de savoir, elle est diversifiée et soucieuse de la qualité des contenus postés.</p>
+    </div>
+  </div>
+</div>
 
 <STYLE>
 
