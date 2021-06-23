@@ -2,7 +2,14 @@ class VideosController < ApplicationController
   before_action :authenticate_user!, except: [:show, :index]
 
   def index
-    @videos = Video.all
+    @categories = Category.all  
+    
+    cate = params[:cate]     
+    if !cate.nil?       
+      @videos = Video.where( :category_id => cate)     
+    else  
+     @videos = Video.all      
+    end   
   end
 
   def show
@@ -10,8 +17,6 @@ class VideosController < ApplicationController
     @comments = Comment.where(video_id: @video).order("created_at DESC")
     
   end
-
-
 
   def new
     @video = current_user.videos.build
