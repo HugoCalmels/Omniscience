@@ -74,8 +74,44 @@
 
 
 
-    
+<div class="container">
+    <div class="row">
+        <% @videos.each do |video| %>
+        <div clas="col-md-4">
+            <div class="card">
 
+                <h3><%= link_to video.title, video_path(video.id)%></h3>
+                    <%= link_to "view", video_path(video.id), class: 'btn btn-primary' %>
+                </div>
+            </div>
+        </div>
+        <% end %>
+    </div>
+
+</div>
+
+ 
+    
+<div class="card mt-3">
+    <div class="card-header">
+        Categories
+    </div>
+
+    <div class="card-body">
+    <ul class="list-group">
+    <% @categories.each do |category| %>
+        
+    <li class="list-group-item d-flex justify-content-center align-items-center">
+    <%= link_to category.title, videos_path(:cate => category.id) %>
+        
+    <p><%= category.videos.count %></p>
+    </li>
+    <% end %>
+        
+        </ul>
+    </div>
+
+</div>
 
 
 <STYLE>
