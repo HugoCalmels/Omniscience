@@ -3,6 +3,8 @@
 <br>
 
 <% @comments.each do |comment| %>
+
+  <%= image_tag comment.user.avatar, class: "rounded-circle" %>
   <p><b><%= comment.user.name %></b></p>
   <p><%= comment.content %></p>
   <% if current_user == comment.user or is_admin? %>
