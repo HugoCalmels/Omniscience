@@ -1,40 +1,35 @@
-<% content_for :title, "Omniscience" %>
+<% if user_signed_in? %>
 
-<h1>OMNISCIENCE, APPRENEZ EN STREAMING !</h1>
-
-    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-        </div>
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="https://images.unsplash.com/photo-1554415707-6e8cfc93fe23?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" max-width: 100% height: auto; class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-                <img src="https://images.unsplash.com/photo-1591994843349-f415893b3a6b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-                <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" class="d-block w-100" alt="...">
-            </div>
-        </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-        </div>
+<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+<div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+</div>
+<div class="carousel-inner">
+    <div class="carousel-item active">
+        <img src="https://images.unsplash.com/photo-1554415707-6e8cfc93fe23?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" max-width: 100% height: auto; class="d-block w-100" alt="...">
     </div>
+    <div class="carousel-item">
+        <img src="https://images.unsplash.com/photo-1591994843349-f415893b3a6b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+        <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" class="d-block w-100" alt="...">
+    </div>
+</div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+</div>
 
 
-<br></br>
 
-<h2>Des contenus chaque semaine !</h2>
-<br></br>
 
 <div class="container categories-container">
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 ", style="padding-top: 10px;">
@@ -76,10 +71,42 @@
 
 
 
+
+
+
+<div class="card mt-3">
+    <div class="card-header">
+        Categories
+    </div>
+
+    <div class="card-body">
+    <ul class="list-group">
+    <% @categories.each do |category| %>
+
+    <li class="list-group-item d-flex justify-content-center align-items-center">
+    <%= link_to category.title, videos_path(:cate => category.id) %>
+
+    <p><%= category.videos.count %></p>
+    </li>
+    <% end %>
+
+        </ul>
+    </div>
+
+</div>
+
+
     
+<% else %>
 
+<div class="contenair welcome-container">
+<h1>Bienvenue sur Omniscience!</h1>
+<h5>Merci de vous enregistrer. </h5> 
+<p> En créant un compte, vous pourrez accéder à notre site.</p>
+<%= button_to "Créer un compte", new_user_registration_path, :method => "get", class: "create_button" %>
 
-<br></br>
+</div>
+<br>
 <div class="card-group">
   <div class="card">
     <img class="card-img-top" src="https://images.unsplash.com/photo-1614899417406-e6f8485cd279?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjB8fGtub3dsZWRnZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Card image cap">
@@ -103,6 +130,7 @@
     </div>
   </div>
 </div>
+<% end %>
 
 <STYLE>
 
@@ -115,7 +143,31 @@ h1 {
     height: 500px;
 }
 
-
-
-
+.welcome-container {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  flex-direction: column;
+  }
+  
+  .create_button {
+    font-weight: 1000;
+    font-size:25px;
+    background-color: rgb(124, 124, 124);
+    border: none;
+    color: black;
+    padding: 10px 75px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 12px;
+    border: 3px solid black;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  }
+  .create_button:hover {
+    background-color: white;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    border: 3px solid black;
+  } 
 </STYLE>
