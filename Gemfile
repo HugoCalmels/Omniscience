@@ -85,5 +85,6 @@ gem 'bootstrap'
 gem 'gastly'
 gem 'will_paginate'
 gem 'stripe'
-
+gem 'gravatar_image_tag', '~> 1.2'
 gem 'activestorage', '~> 5.2', '>= 5.2.6'
+gem 'popper_js'
