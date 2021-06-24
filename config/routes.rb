@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   root to: "videos#index"
-  get 'search',to:"categories#{search}"
   devise_for :users
 
   resources :videos do 
