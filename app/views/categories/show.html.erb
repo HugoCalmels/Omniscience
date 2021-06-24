@@ -19,11 +19,13 @@ border: 2px solid rgb(166, 155, 158);
         <br>
 
             <h3><%= @category.title %></h3>
+            <%= image_tag(@category.image) if @category.image.attached? %>
 
             <div class="container but"
                 <div class="row">
                     <% if is_admin? %>
-                        <%= link_to "Supprimer", category_path(@category.id), method: :delete %>
+                    <%= link_to "Modifier", edit_video_path(@category.id), class: 'btn btn-sm btn-outline-secondary'%>
+                        <%= link_to "Supprimer", category_path(@category.id), method: :delete, class: 'btn btn-sm btn-outline-secondary'%>
                     <% end %>
                 </div>
                 <div class="row">
