@@ -75,6 +75,27 @@
 </div>
 
 
+<div class="card mt-3">
+    <div class="card-header">
+        Categories
+    </div>
+
+    <div class="card-body">
+    <ul class="list-group">
+    <% @categories.each do |category| %>
+
+    <li class="list-group-item d-flex justify-content-center align-items-center">
+    <%= link_to category.title, videos_path(:cate => category.id) %>
+
+    <p><%= category.videos.count %></p>
+    </li>
+    <% end %>
+
+        </ul>
+    </div>
+
+</div>
+
 
     
 
