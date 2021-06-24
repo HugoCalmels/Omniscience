@@ -4,6 +4,11 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+    
+  validates :name, length: { minimum: 3 ,maximum: 20}
+  validates :email, format: { with: URI::MailTo::EMAIL_REGEXP } 
+  
+  
   has_many :videos
   has_many :comments
   has_one_attached :avatar
