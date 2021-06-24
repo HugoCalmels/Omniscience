@@ -3,6 +3,10 @@ class CategoriesController < ApplicationController
     @categories = Category.all
   end
 
+  def search
+    @categories = Category.where("title LIKE ?", "%" + params[:q] + "%")
+  end  
+
   def show
     @category = Category.find(params[:id])
   end
@@ -47,4 +51,12 @@ class CategoriesController < ApplicationController
   def category_params
     params.require(:category).permit(:title, :description)
   end
+
+
+
+
+
+
+
+  
 end

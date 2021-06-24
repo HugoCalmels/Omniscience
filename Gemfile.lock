@@ -125,11 +125,7 @@ GEM
       addressable (~> 2.7)
     letter_opener (1.7.0)
       launchy (~> 2.2)
-<<<<<<< HEAD
     libv8-node (15.14.0.1)
-=======
-    libv8-node (15.14.0.1-x86_64-linux)
->>>>>>> f2b3b4b58ddea502c498143854d72d24d118438c
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -149,12 +145,8 @@ GEM
     minitest (5.14.4)
     msgpack (1.4.2)
     nio4r (2.5.7)
-<<<<<<< HEAD
     nokogiri (1.11.7)
       mini_portile2 (~> 2.5.0)
-=======
-    nokogiri (1.11.7-x86_64-linux)
->>>>>>> f2b3b4b58ddea502c498143854d72d24d118438c
       racc (~> 1.4)
     orm_adapter (0.5.0)
     pg (1.2.3)
@@ -278,10 +270,6 @@ GEM
 
 PLATFORMS
   ruby
-<<<<<<< HEAD
-=======
-  x86_64-linux
->>>>>>> f2b3b4b58ddea502c498143854d72d24d118438c
 
 DEPENDENCIES
   activestorage (~> 5.2, >= 5.2.6)
