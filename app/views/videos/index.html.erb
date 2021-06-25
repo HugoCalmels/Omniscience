@@ -1,6 +1,9 @@
 <% if user_signed_in? %>
 
 
+<center><h2>Ca y est ! A présent tu peux profiter du contenu, et de la communauté d'<strong><u>Omniscience</u><strong></h2></center>
+<center><h4>Pour l'instant il n'y a que 3 <u>catégories</u>, pour le reste c'est toi qui <u>partage</u> des vidéos ( en mp4 ) !</h4>
+<h5><i><u>L'admin</u> peut supprimer ou modifier n'importe quelle vidéo, et c'est lui seul qui peut rajouter des <u>catégories</u>.</h5></i>
 <div class="jumbotron index-jumbotron">
 <div class="center-div">
 <%= link_to "Partage tes vidéos !", new_video_path, class: 'btn btn-lg btn-success', style: 'font-weight: 400;
@@ -86,7 +89,8 @@ font-size:30px;' %>
 <% else %>
 
 <div class="contenair welcome-container">
-<h1>Bienvenue sur Omniscience!</h1>
+<h1>Bienvenue !</h1>
+<h3><u><b>Omniscience</b></u> est un site de streaming à but éducationnel</h3>
 <h5>Merci de vous enregistrer. </h5> 
 <p> En créant un compte, vous pourrez accéder à notre site.</p>
 <%= button_to "Créer un compte", new_user_registration_path, :method => "get", class: 'btn btn-lg btn-success',style: 'font-weight: 400;
