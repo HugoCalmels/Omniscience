@@ -1,44 +1,35 @@
-
-<div class="spacer">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-md-7 text-center mb-3">
-        <%= form_for @video do |f| %>
-
-            <div class="field">
-                <%= f.label :Titre %>
-                <%= f.text_field :title %>
-            </div>
-
-            <br>
-
-            <div class="field">
-                <%= f.label :Fichier_Mp4 %>
-                <%= f.file_field :clip %>
-            </div>
-
-            <br>
-        
-            <div class="field">
-                <p>Sélectionner sa catégorie <%= f.select :category_id, Category.all.map {|c| [c.title, c.id]} %></p>
-            </div>
-
-            <br>        
-
-            <div class="field">
-                <%= f.label :description %>
-                <%= f.text_area :description %>
-            </div>
-        
-            <br>
-
-            <div class="field">
-                <%= f.submit " Valider " %>
-            </div>
-
-            <br>
-
-            <% end %>
+<div class="col-2 offset-5 text-center">
+    <%= form_for @video do |f| %>
+        <div class="titre_centre">
+            <%= f.label :Titre, class: "form-label" %><br>
+            <%= f.text_field :title %>
         </div>
-    </div>
-</div>        
+
+        <br>
+
+        <div>
+            <%= f.label :Fichier_Mp4, class: "form-label"%>
+            <%= f.file_field :clip %>
+        </div>
+
+        <br>
+
+   
+        <div class="row">
+        <div class="col"><p>Sélectionner votre catégorie </p></div>
+        <div class="col"><%= f.select :category_id, Category.all.map {|c| [c.title, c.id]}, class: "form-label" %></div>
+        </div>
+
+        <br>        
+
+        <div>
+            <%= f.label :description, class: "form-label" %><br>
+            <%= f.text_area :description %>
+        </div>
+        
+        <br>
+
+        <div class="field">
+            <%= f.submit " Valider " %>
+        </div>
+    <% end %>

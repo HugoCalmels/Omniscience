@@ -1,4 +1,14 @@
+<div class="row">
+ <div class="col-6 offset-3">
+  <div class="comment_form">
 <%= form_for([@video, @comment]) do |f| %>
-  <%= f.text_area :content %>
-  <%= f.submit %>
+  <%= f.text_area :content , class:"form-control mb-2"%>
+  <div class="col-6 offset-4">
+  <%= f.submit "Modifier mon commenaire" , class:'btn btn-sm btn-outline-secondary'%>
     <% end %>
+    </div>
+  </div>
+  </div>
+</div>
+
+
