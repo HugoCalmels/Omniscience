@@ -5,8 +5,9 @@
 <center><h5><i><u>L'admin</u> peut supprimer ou modifier n'importe quelle vidéo.</h5></i></center>
 <div class="jumbotron index-jumbotron">
 <div class="center-div">
-<%= link_to "Partage tes vidéos !", new_video_path, class: 'btn btn-lg btn-success', style: 'font-weight: 400;
-font-size:30px;' %>
+<center><%= link_to "Partage ta vidéo !", new_video_path, class: 'btn btn-lg btn-success', style: 'font-weight: 400; font-size:30px; margin-right: 20px;' %>
+<%= link_to "Crée une Catégorie", new_category_path, class: 'btn btn-lg btn-secondary', style: 'font-weight: 400; font-size:30px;' %>
+<center>
 </div>
 </div>
 
@@ -26,26 +27,27 @@ font-size:30px;' %>
 
                         <div class="card-header">
                             <center>
-                            <h4> <%= video.title %></h4>
+                            <h4><%= video.user.name.capitalize %> </h4>
                             </center>
                         </div>
 
                         <div class="card-body">
                             <center>
-                            <br>
-                            <div style="width:300px; height:275px">
-                                <%= video_tag(url_for(video.clip), style:'width:300px; height:275px') %>
+                            
+                            <div style="width:300px; height:300px">
+                                <%= video_tag(url_for(video.clip), style:'width:300px; height:300px') %>
                             </div>
                             </center>
-                        </div>
-
-                        <div class="footer">
-                        <center>
-                        <h6><strong>Auteur : </strong><%= video.user.name %></h6>
                         
-                        <%= link_to "Regarder !", video_path(video.id), class: 'btn btn-sm btn-outline-secondary align-item-right'%>
+                    
+
+                        
+                        <center>
+                        <h5><b>"<%= video.title.capitalize %>"</b></h5>
+                        
+                        <%= link_to "Regarder !", video_path(video.id), class: 'btn  btn-secondary', style: 'font-weight: 400;'%>
                         </center>
-                        <br>
+                        
                         </div>
 
 

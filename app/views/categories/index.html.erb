@@ -5,11 +5,9 @@
     <div class="col-1">
     </div>
     <div class="col-10">
-    <% if is_admin? %>
     <center>
     <%= link_to "Créer une nouvelle Catégorie", new_category_path, class: 'btn btn-lg btn-success', style: 'font-weight: 400;'%>
     </center>
-    <% end %>
     <br>
     <% @categories.each do |category| %>
       <div class="card mt-5">
