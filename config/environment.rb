@@ -11,7 +11,7 @@ ActionMailer::Base.perform_deliveries = true
 ActionMailer::Base.smtp_settings = {
     address: 'smtp.gmail.com',
     port: 465,
-    domain: 'gmail.com',
+    domain: ENV['SMTP_DOMAIN'],
     user_name: ENV['SMTP_USER_NAME'],
     password: ENV['SMTP_PASSWORD'],
     authentication: 'plain',
