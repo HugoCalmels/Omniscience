@@ -1,51 +1,54 @@
-<STYLE>
-.vid{
-  display:flex;
-  flex-direction: column;
-  
-}
-</STYLE>
 
 
-<body>
-
-<div class="container vid text-center">
-
-    <div style="width:1280px; height:720px">
-    <%= video_tag(url_for(@video.clip), style:'width:70%;height:720px', controls:'') %>
-    </div>
-
-    <div>
-    <br></br>
-        <h3>Titre : "<%=@video.title %>"</h3>
-        <p><strong> Catégorie</strong> : <%= @video.category.title %></p>
-        <hr>
-    </div>
-
-    <div>
-        <p><strong> Auteur</strong> : <%= @video.user.name %></p> 
-        <% if (current_user && current_user.id == @video.user_id) || current_user.admin %>
-            <%= link_to "Modifier", edit_video_path(@video.id), class: 'btn btn-sm btn-outline-secondary'%>
-            <%= link_to "Supprimer", video_path(@video.id), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-outline-secondary'%>
-        <% end %>
-        <hr>
-    </div>
-
-    <div>
-        <p><strong> Description</strong> : <%=@video.description %></p>
-        <hr>
-    </div>
-
-    <div>
-        <%= render 'comments/comment' %>
-    </div>
-</div>
-
-
-
-
-
-  <script src="https://vjs.zencdn.net/7.11.4/video.min.js"></script>
  
- </div>
-</body>
+<div class="container">
+  <div class="row">
+    <div class="col-1">
+    </div>
+
+    <div class="col-10">
+        <div class="video-clip">
+            <div style="width:100%;">
+                <%= video_tag(url_for(@video.clip), style:'width:100%;height:521px', controls:'') %>
+            </div>
+        </div>
+
+        <div class ="video-title">
+        <div class="d-flex justify-content-between">
+
+            <div>
+            <h3>"<%=@video.title %>"</h3>
+            
+            </div>
+            
+
+            <div>
+            <% if (current_user && current_user.id == @video.user_id) || current_user.admin %>
+                <%= link_to "Modifier", edit_video_path(@video.id), class: 'btn btn btn-warning'%>
+                <%= link_to "Supprimer", video_path(@video.id), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn btn-danger'%>
+                
+            <% end %>
+            </div>
+        </div>
+        </div>
+        <hr>
+
+        <div class ="video-infos">
+            <p><strong> Catégorie</strong> : <%= @video.category.title %></p>
+            <p><strong> Auteur</strong> : <%= @video.user.name %></p>
+            <p><strong> Description</strong> : <%=@video.description %></p>
+            <HR>
+        </div>
+
+
+        <div class ="video-comments">
+            <%= render 'comments/comment' %>
+        </div>
+
+
+    </div>
+
+
+    <div class="col-1">
+    </div>
+  </div>
