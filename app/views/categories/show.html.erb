@@ -19,7 +19,7 @@ border: 2px solid rgb(166, 155, 158);
         <br>
 
             <h3><%= @category.title %></h3>
-            <%= image_tag(@category.image) if @category.image.attached? %>
+            <%= image_tag(@category.image, style:'width:100%') if @category.image.attached? %>
 
             <div class="container but"
                 <div class="row">
