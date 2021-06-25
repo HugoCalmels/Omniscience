@@ -11,6 +11,10 @@ User.destroy_all
 Comment.destroy_all
 Video.destroy_all
 
+Category.create(title: "Sciences")
+Category.create(title: "Astronomie")
+Category.create(title: "Economie")
+
 user = User.new 
 user.name = 'admin'
 user.admin = true
