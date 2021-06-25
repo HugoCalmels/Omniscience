@@ -2,13 +2,14 @@ class VideosController < ApplicationController
   before_action :authenticate_user!, except: [:show, :index]
 
   def index
-    @categories = Category.all  
+    @categories = Category.all
     
     cate = params[:cate]     
     if !cate.nil?       
-      @videos = Video.where( :category_id => cate)     
+      @videos = Video.where( :category_id => cate)
+ 
     else  
-     @videos = Video.all      
+     @videos = Video.all     
     end   
   end
 

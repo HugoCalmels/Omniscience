@@ -1,25 +1,33 @@
 
 
-<style>
+<div class="flex-row d-flex justify-content-center">
 
-* {
+<div class="col-md-8">
+    <div class="card mt-5">
 
-text-align: center;
+        <div class="card-body">
+        <%= form_for @category do |f| %>
 
-}
+            <div class="form-group">
+                <%= f.label :Titre %>
+                <%= f.text_field :title, class: 'form-control' %>
+            </div>
 
-</style>
+            <div class="form-group">
+                <%= f.label :image %>
+                <%= f.file_field :image %>
+            </div>
 
+            <% if is_admin? %>
+                <%= f.submit " Valider ", class: 'btn btn-outline-primary'%>
+            <% end %>
+            <%= link_to " Retour  ", categories_path, class: 'btn btn-outline-secondary'%>
 
-    <div class="bs-component">
-      <%= form_for @category do |f| %>
-
-        <%= f.label :title %>
-        <%= f.text_field :title %>
-        <% if is_admin? %>
-        <%= f.submit " Valider " %>
+        </div>
+        </div>
         <% end %>
-      <% end %>
+    </div>
+</div>
 
 
 
