@@ -1,8 +1,10 @@
 class VideosController < ApplicationController
   before_action :authenticate_user!, except: [:show, :index]
+  layout "application", only: [:index]
 
   def index
     @categories = Category.all
+
     
     cate = params[:cate]     
     if !cate.nil?       

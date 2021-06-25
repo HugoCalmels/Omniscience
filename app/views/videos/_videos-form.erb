@@ -1,44 +1,47 @@
 
-<div class="spacer">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-md-7 text-center mb-3">
-        <%= form_for @video do |f| %>
+<div class="flex-row d-flex justify-content-center align-items-center">
+    <div class="col-md-8">
+        <div class="card mt-5">
 
-            <div class="field">
-                <%= f.label :Titre %>
-                <%= f.text_field :title %>
+            <div class="card-body">
+            <%= form_for @video do |f| %>
+
+                <div class="form-group">
+                    <%= f.label :Titre %>
+                    <%= f.text_field :title, class: 'form-control' %>
+                </div>
+
+                <br>
+                <ul>
+                <li>
+                <div class="form-group">
+                    <%= f.label :Fichier_Mp4 %>
+                    <%= f.file_field :clip %>
+                </div>
+                </li>
+
+                <br>
+                <li>
+                <div class="form-group">
+                    <p>Sélectionner sa catégorie <%= f.select :category_id, Category.all.map {|c| [c.title, c.id]} %></p>
+                </div>
+                </li>
+                </ul>
+
+                <div class="form-group">
+                    <%= f.label :description %>
+                    <%= f.text_area :description, class: 'form-control' %> 
+                </div>
+                <br>
+
+                <center>
+                <% if is_admin? %>
+                    <%= f.submit " Valider ", class: 'btn btn-outline-primary'%>
+                <% end %>
+                <%= link_to " Retour  ", categories_path, class: 'btn btn-outline-secondary'%>
+                <center>
             </div>
-
-            <br>
-
-            <div class="field">
-                <%= f.label :Fichier_Mp4 %>
-                <%= f.file_field :clip %>
-            </div>
-
-            <br>
-        
-            <div class="field">
-                <p>Sélectionner sa catégorie <%= f.select :category_id, Category.all.map {|c| [c.title, c.id]} %></p>
-            </div>
-
-            <br>        
-
-            <div class="field">
-                <%= f.label :description %>
-                <%= f.text_area :description %>
-            </div>
-        
-            <br>
-
-            <div class="field">
-                <%= f.submit " Valider " %>
-            </div>
-
-            <br>
-
-            <% end %>
         </div>
+        <% end %>
     </div>
-</div>        
+</div>
