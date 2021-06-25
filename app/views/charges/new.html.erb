@@ -1,3 +1,9 @@
+<div class="jumbotron new-charge-jumbotron">
+<p>Faire un don </p>
+</div>
+<br>
+
+<center>
 <%= form_tag charges_path do %>
   <article>
     <% if flash[:error].present? %>
@@ -6,7 +12,7 @@
       </div>
     <% end %>
     <label class="amount">
-      <span>Amount: $5.00</span>
+      <span><h2><b>Donner: 5 €</b></h2></span>
     </label>
   </article>
   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
@@ -16,3 +22,22 @@
       data-locale="auto">
   </script>
   <% end %>
+  </center>
+
+<style>
+  .new-charge-jumbotron {
+  display: flex;
+  background: url(<%= asset_path 'people_together.jpg' %>);
+  align-items: center;
+  justify-content: center;
+  height: 400px;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  width: 100%;
+  background-position-y: center;
+  color: rgb(133, 130, 132);
+  font-weight: 600;
+  font-size:100px;
+}
+</style>
+

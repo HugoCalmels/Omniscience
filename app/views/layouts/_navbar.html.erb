@@ -33,7 +33,8 @@
 
               </a>
               <div class="dropdown-menu text-center">
-                <%= link_to 'Editer mon compte', edit_user_registration_path(current_user) %>
+                <li><%= link_to "Faire un don", new_charge_path %></li>
+                <li><%= link_to 'Editer mon compte', edit_user_registration_path(current_user) %></li>
                 <li> <%= link_to "Se deconnecter", destroy_user_session_path, method: :delete, class: 'text-black' %></li>
                 </div>
             </ul>
