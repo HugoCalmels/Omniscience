@@ -1,44 +1,47 @@
-
-<div class="spacer">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-md-7 text-center mb-3">
-        <%= form_for @video do |f| %>
-
-            <div class="field">
-                <%= f.label :Titre %>
-                <%= f.text_field :title %>
-            </div>
-
-            <br>
-
-            <div class="field">
-                <%= f.label :Fichier_Mp4 %>
-                <%= f.file_field :clip %>
-            </div>
-
-            <br>
-        
-            <div class="field">
-                <p>Sélectionner sa catégorie <%= f.select :category_id, Category.all.map {|c| [c.title, c.id]} %></p>
-            </div>
-
-            <br>        
-
-            <div class="field">
-                <%= f.label :description %>
-                <%= f.text_area :description %>
-            </div>
-        
-            <br>
-
-            <div class="field">
-                <%= f.submit " Valider " %>
-            </div>
-
-            <br>
-
-            <% end %>
+<div class="row">
+ <div class="col-6 offset-3  text-center">
+    <%= form_for @video do |f| %>
+        <div>
+            <%= f.label :Titre, class: "form-label" %><br>
+            <%= f.text_field :title , class: "form-control mb-5" %>
         </div>
-    </div>
-</div>        
+
+        <br>
+
+        <div>
+            <%= f.label :description, class: "form-label" %><br>
+            <%= f.text_area :description , class: "form-control mb-8" %>
+        </div>
+
+        <br>
+        
+       ### <div>
+       ###    <%= f.label :Fichier_Mp4, class: "form-label"%>
+       ###    <br> 
+       ###    <%= f.file_field :clip %>
+       ### </div>
+
+        <div class="form-group">
+        <label for="Fichier_Mp4" class="form-label mt-4">
+        <input class="form-control" type="file" id="clip">
+       </div>
+
+        <br>
+        <br>
+
+        
+        <p> Choisissez votre Catégorie:</p>
+        <div class="col-4 offset-4"><%= f.select :category_id, Category.all.map {|c| [c.title, c.id]}, class: "form-label" %></div>
+        
+        <br>
+        <br>
+        <br>
+
+
+        <div class="field">
+            <%= f.submit " Valider " %>
+        </div>
+        <br>
+
+    <% end %>
+</div>
