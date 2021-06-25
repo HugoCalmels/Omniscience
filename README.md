@@ -1,7 +1,7 @@
 # README
 
 ## Index
-lient heroku :  https://omniscience-thp.herokuapp.com/
+lien heroku :  https://omniscience-thp.herokuapp.com/
 
 
 
