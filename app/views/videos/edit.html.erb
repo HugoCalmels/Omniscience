@@ -1,4 +1,31 @@
 
-<center><h3> Editer son contenu </h3></center>
-<br></br>
+<div class="jumbotron edit-video-jumbotron">
+<h3 class="centered-text">Editer sa vidéo</h3>
+</div>
+
 <%= render 'videos-form' %>
+
+<br><br><br><br>
+
+<style>
+
+.edit-video-jumbotron {
+  display: flex;
+  background: url(<%= asset_path 'cate-economy.jpg' %>);
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  width: 100%;
+  background-position-y: center;
+}
+
+.centered-text {
+  color: white;
+  font-size: 60px;
+  font-weight: 900;
+  text-decoration:underline;
+}
+
+</style>

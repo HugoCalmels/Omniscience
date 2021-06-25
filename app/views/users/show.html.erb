@@ -1,23 +1,10 @@
 <body>
-<h1>Bienvenue sur votre page de profil, <%= @user.name%></h1>
-
+<h3>Bienvenue sur ta page de profil, <u><%= @user.name%></u>.</h3>
 <center>
 <%= link_to 'Modifier mon profil', edit_user_registration_path , class: 'btn btn-sm btn-outline-secondary'%>
 </center>
 <br><br>
 <h3> Voici les contenus que tu as mis en ligne : </h3>
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 <div class="container categories-container">
@@ -91,12 +78,5 @@ body{
   text-align: center;
 }
 
-
- .card {
-  
-  
-	 background-image: linear-gradient(180deg, white 3rem, #f0a4a4 calc(3rem), #f0a4a4 calc(3rem + 2px), transparent 1px), repeating-linear-gradient(0deg, transparent, transparent 1.5rem, #ddd 1px, #ddd calc(1.5rem + 1px));
-	 
-}
  
 </STYLE>

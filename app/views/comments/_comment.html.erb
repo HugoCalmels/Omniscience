@@ -1,20 +1,30 @@
-<h5><%= pluralize(@comments.count, " commentaire") %></h5>
+<h6><%= pluralize(@comments.count, " commentaire") %></h6>
 
-<br>
 
+<%= render 'comments/form' %>
 <% @comments.each do |comment| %>
 
-
-  <p><b><%= comment.user.name %></b></p>
-  <p><%= comment.content %></p>
-  <% if current_user == comment.user or is_admin? %>
-  <%= link_to "Supprimer", [comment.video, comment], method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-outline-secondary'%>
-  <%= link_to "Modifier", edit_video_comment_path(comment.video, comment), class: 'btn btn-sm btn-outline-secondary'%>
-  <% end %> 
-
+  <p>
+  <% if comment.user.avatar.attached? %>
+  <%= image_tag comment.user.avatar, height: 50, width:50, class: "rounded-circle" %>
+  <% else %>
+            <%= image_tag gravatar_image_url(current_user.email, size: 505), height: 50, width:50, class: "rounded-circle" %>
+            <% end %>
+      <b><%= comment.user.name %></b>
+      <% if current_user == comment.user or is_admin? %>
+          <%= link_to "Supprimer", [comment.video, comment], method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-outline-secondary'%>
+          <%= link_to "Modifier", edit_video_comment_path(comment.video, comment), class: 'btn btn-sm btn-outline-secondary'%>
+      <% end %> 
   </p>
+
+  <ul>
+      <li>
+      <%= comment.content %>
+      </li>
+  </ul>
+
+
   
-  <% end %> 
+<% end %> 
 
 
-  <%= render 'comments/form' %>

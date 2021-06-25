@@ -3,6 +3,10 @@ class CategoriesController < ApplicationController
     @categories = Category.all
   end
 
+  def search
+    @categories = Category.where("title LIKE ?", "%" + params[:q] + "%")
+  end  
+
   def show
     @category = Category.find(params[:id])
   end
@@ -15,7 +19,7 @@ class CategoriesController < ApplicationController
     @category = Category.create(category_params)
 
     if @category.save
-      redirect_to @category
+      redirect_to categories_path
     else
       render :new
     end
@@ -45,6 +49,14 @@ class CategoriesController < ApplicationController
   private
 
   def category_params
-    params.require(:category).permit(:title, :description)
+    params.require(:category).permit(:title, :description, :image)
   end
+
+
+
+
+
+
+
+  
 end

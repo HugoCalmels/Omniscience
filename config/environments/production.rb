@@ -1,5 +1,6 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
+<<<<<<< HEAD
   config.action_mailer.perform_caching = false
     config.action_mailer.delivery_method = :smtp
     config.action_mailer.default_url_options = { :host => ENV['DOMAIN_NAME'] }
@@ -13,6 +14,10 @@ Rails.application.configure do
       :password             => ENV['SMTP_PASSWORD'],
       :enable_starttls_auto => true
     }
+=======
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.default_url_options = { :host => 'omniscience-thp.herokuapp.com' }
+>>>>>>> release/1.0.7
 
   # Code is not reloaded between requests.
   config.cache_classes = true

@@ -10,143 +10,22 @@
 
     <!--Boostrap-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-
-    <!--Downloaded from : videojs.com/getting-started-->
-    <!--Basicaly, Videojs is a video player for Active_storage-->
-    <link href="https://vjs.zencdn.net/7.11.4/video-js.css" rel="stylesheet" />
-    <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+    <!--Stripe-->
+    <script src="https://js.stripe.com/v3/"></script>
+    
 
   </head>
 
   <body>
-
-
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
-    <a class="navbar-brand"><%= link_to "Omniscience    ", root_path %></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarColor03">
-      <ul class="navbar-nav me-auto">
-        <div class="my-2 my-sm-0">
-          <a class="navbar-brand"><%= link_to "Catégories", categories_path %></a>
-        </div>
-        
-        <div class="my-2 my-sm-0">
-          <% if user_signed_in? %>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Bienvenue</a>
-              <div class="dropdown-menu text-center">
-                <a> <%= link_to "Mon profil", user_path(current_user) %></a>
-                <br>
-                <a><%= link_to "Créer un contenu", new_video_path %></a>
-              </div>
-            </li>
-          <% end %>
-        </div>
-
-        
-      
-
-        
-      </ul>
-
-        
-
-
-
-
-      <form class="d-flex">
-        <input class="form-control me-sm-2" type="text" placeholder="Recherche">
-        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Recherche</button>
-      </form>
-      <% if user_signed_in? %>
-         
-          <a><%= button_to "Se deconnecter", destroy_user_session_path, method: :delete, class: 'text-black' %></a>
-        <% else %>
-          <a><%= button_to "Se connecter", new_user_session_path, class: 'text-black' %></a>
-          
-      <% end %>
-    </div>
-  </div>
-</nav>
-
-
-
-  <p class="notice"><%= notice %></p>
-       <p class="alert"><%= alert %></p>
+    <%= render 'layouts/navbar' %>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
     <%= yield %>
     <body class="d-flex flex-column">
-  
-
-
-  <!-- Footer -->
-  <footer class="bg-white">
-    <div class="container py-5">
-      <div class="row py-4">
-        <div class="col-lg-4 col-md-6 mb-4 mb-lg-0"><img src="img/logo.png" alt="" width="180" class="mb-3">
-          <p class="font-italic text-muted">La connaissance au bout des doigts</p>
-          <ul class="list-inline mt-4">
-            <li class="list-inline-item"><a href="#" target="_blank" title="twitter"><i class="fa fa-twitter"></i></a></li>
-            <li class="list-inline-item"><a href="#" target="_blank" title="facebook"><i class="fa fa-facebook"></i></a></li>
-            <li class="list-inline-item"><a href="#" target="_blank" title="instagram"><i class="fa fa-instagram"></i></a></li>
-            <li class="list-inline-item"><a href="#" target="_blank" title="pinterest"><i class="fa fa-pinterest"></i></a></li>
-            <li class="list-inline-item"><a href="#" target="_blank" title="vimeo"><i class="fa fa-vimeo"></i></a></li>
-          </ul>
-        </div>
-        <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
-          <h6 class="text-uppercase font-weight-bold mb-4">L équipe</h6>
-          <ul class="list-unstyled mb-0">
-            <li class="mb-2"><a href="https://fr.linkedin.com/in/amal-guedda" class="text-muted">Amal</a></li>
-            <li class="mb-2"><a href="https://fr.linkedin.com/in/hugo-calmels" class="text-muted">Hugo</a></li>
-            <li class="mb-2"><a href="#" class="text-muted">Raghoul</a></li>
-            <li class="mb-2"><a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFFpK87HdXnV7HDD-DH-CkT3I4zj2NwAgFQg&usqp=CAU" class="text-muted">Aurelflip</a></li>
-          </ul>
-        </div>
-        <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
-          <h6 class="text-uppercase font-weight-bold mb-4">Compte</h6>
-          <ul class="list-unstyled mb-0">
-            
-            
-            <% if user_signed_in? %>
-              <li class="mb-2"><a href="/videos/new" class="text-muted">Créer Une Vidéo</a></li>
-              <li class="mb-2"><a href="#" class="text-muted">Profil</a></li>           
-            <% else %>
-              <li class="mb-2"><a href="/users/sign_in" class="text-muted">Se Connecter</a></li>
-            <% end %>
-          </ul>
-        </div>
-        <div class="col-lg-4 col-md-6 mb-lg-0">
-          <h6 class="text-uppercase font-weight-bold mb-4">Nous Contacter</h6>
-         
-          <div class="p-1 rounded border">
-            <div class="input-group">
-              <input type="email" placeholder="Enter your email address" aria-describedby="button-addon1" class="form-control border-0 shadow-0">
-              <div class="input-group-append">
-                <button id="button-addon1" type="submit" class="btn btn-link"><i class="fa fa-paper-plane"></i></button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Copyrights -->
-    <div class="bg-light py-4">
-      <div class="container text-center">
-        <p class="text-muted mb-0 py-2">Amal, Raghoul, Hugo, Aurelflip  The Hacking Project session mars 2021</p>
-      </div>
-    </div>
-  </footer>
-  <!-- End -->
-
-
-    </body>
+    <%= render 'layouts/footer' %>
+  </body>
 </html>
-
-
 
 
 
@@ -157,5 +36,6 @@
 a {
   text-decoration: none
 }
+
 
 </STYLE>
