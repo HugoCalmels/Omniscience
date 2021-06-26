@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
 
   root to: "videos#index"
-  devise_for :users
-
+  devise_for :users, controllers: {
+    confirmation: 'confirmations'
+}
   resources :videos do 
     resources :comments 
   end
