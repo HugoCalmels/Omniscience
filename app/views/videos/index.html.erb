@@ -30,12 +30,13 @@
                         </div>
 
                         <div class="card-body">
-                            <center>
-                            
-                            <div style="width:300px; height:300px">
-                                <%= video_tag(url_for(video.clip), style:'width:300px; height:300px') %>
-                            </div>
-                            </center>
+                           
+                        
+
+                                <%= video_tag(url_for(video.clip), class: "center-img") %>
+                      
+                    
+                      
                         
                     
 
@@ -178,6 +179,13 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  .center-img {
+    display:block;
+    width: 100%;
+    max-width: 300px;
+    height: auto;
   }
 
 </STYLE>
