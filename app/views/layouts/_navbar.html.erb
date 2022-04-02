@@ -8,13 +8,7 @@
     </div>
 
     <div class="d-flex flex-row-reverse">
-    <% if user_signed_in? %>
-    <% if current_user.avatar.attached? %>
-    <%= image_tag current_user.avatar, height: 75, width:75, class: "rounded-circle" %>
-    <% else %>
-              <%= image_tag gravatar_image_url(current_user.email, size: 75), height: 75, width:75, class: "rounded-circle" %>
-              <% end %>
-              <% end %>
+
   
 
     <div class="collapse navbar-collapse" id="navbarColor03">
@@ -33,7 +27,7 @@
 
               </a>
               <div class="dropdown-menu text-center">
-                <li><%= link_to "Faire un don", new_charge_path %></li>
+      
                 <li><%= link_to 'Editer mon compte', edit_user_registration_path(current_user) %></li>
                 <li> <%= link_to "Se deconnecter", destroy_user_session_path, method: :delete, class: 'text-black' %></li>
                 </div>
